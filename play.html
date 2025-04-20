@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>2026학년도 사국 과목 102 모의고사 1회</title>
+  <title>2026학년도 제1회 과목102 모의고사</title>
   <style>
     body { font-family: Arial, sans-serif; background: #f2f2f2; padding: 40px; }
     .quiz-container { max-width: 700px; margin: auto; background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
@@ -26,7 +26,7 @@
   <audio id="bgm" src="aegukga.mp3" autoplay loop></audio>
 
   <div class="quiz-container">
-    <h1>2026학년도 과목 102 모의고사 1회</h1>
+    <h1>2026학년도 제1회 과목102 모의고사⚔</h1>
     <div id="status">
       <div id="score">점수: 0 / 100</div>
       <div id="timer">남은 시간: 10:00</div>
@@ -35,7 +35,54 @@
         <input type="range" id="volume-control" min="0" max="1" step="0.01" value="0.5">
       </div>
     </div>
-    <d님"
+    <div class="question" id="question">문제가 로딩 중입니다...</div>
+    <div id="options"></div>
+    <div id="feedback"></div>
+    <button id="next-btn" onclick="nextQuestion()">다음 문제</button>
+  </div>
+
+  <script>
+    // 10문제 샘플 – 총 100문제로 확장하세요
+    const quizData = [
+      {
+        question: "폭력성(국민)이란 무엇인가요?",
+        options: [
+          "전쟁에는 감정적 요인이 개입된다.",
+          "전쟁은 팀운에 의존한다.",
+          "전쟁은 경제적 이해관계만 반영된다.",
+          "전쟁은 항상 이성만으로 진행된다."
+        ],
+        answer: "전쟁에는 감정적 요인이 개입된다."
+      },
+      {
+        question: "불확실성(군대)이란 무엇인가요?",
+        options: [
+          "군대는 항상 계획대로 움직인다.",
+          "실제 전쟁은 예측불가능성과 마찰·안개로 가득하다.",
+          "전쟁 중 클래시로얄을 한다.",
+          "불확실성은 정치적 개념이다."
+        ],
+        answer: "실제 전쟁은 예측불가능성과 마찰·안개로 가득하다."
+      },
+      {
+        question: "안개란 무엇인가요?",
+        options: [
+          "전쟁 중 정보의 불확실성과 혼란 상태.",
+          "전투 시 일어나는 실제 기상 현상.",
+          "유독가스로 인한 시야 혼란.",
+          "사전에 계획된 용성이의 장애물."
+        ],
+        answer: "전쟁 중 정보의 불확실성과 혼란 상태."
+      },
+      {
+        question: "클라우제비츠가 말한 전쟁 정의는?",
+        options: [
+          "전쟁은 정치의 연속이다.",
+          "전쟁은 감정의 방출이다.",
+          "전쟁은 경제적 투쟁이다.",
+          "전쟁은 단순한 폭력 행위다."
+        ],
+        answer: "전쟁은 정치의 연속이다."
       },
       {
         question: "고대 전쟁의 ‘결전’이란?",
@@ -72,7 +119,7 @@
         options: [
           "독가스",
           "탱크",
-          "전투기",
+          "김치전",
           "잠수함"
         ],
         answer: "독가스"
